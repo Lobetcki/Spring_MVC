@@ -3,6 +3,7 @@ package skypro.spring_mvc.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,9 +30,9 @@ public class SpringMVCController {
     }
 
     @RequestMapping("/showInfo")
-    public String showName(HttpServletRequest request, Model model) {
-        String contryCity = (request.getParameter("cantry") + " " + request.getParameter("city"));
+    public String showName(@RequestParam("cantry") String cantry, @RequestParam("city") String city, Model model) {
 
+        String contryCity = cantry + " " + "city";
         model.addAttribute("newAttribute", contryCity);
 
         return "showInfo";
