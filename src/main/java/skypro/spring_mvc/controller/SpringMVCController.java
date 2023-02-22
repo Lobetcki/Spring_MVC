@@ -1,4 +1,4 @@
-package spring_mvc.controller;
+package skypro.spring_mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,4 +18,15 @@ public class SpringMVCController {
     public String getFirstView() {
         return "view1";
     }
+
+    @RequestMapping("/enterInfo")
+    public String enterName() {
+        return "enterInfo";
+    }
+
+    @RequestMapping("/showInfo")
+    public String showName() {
+        return "showInfo";
+    }
+
 }
