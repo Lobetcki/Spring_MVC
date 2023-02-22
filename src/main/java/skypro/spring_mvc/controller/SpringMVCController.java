@@ -1,7 +1,11 @@
 package skypro.spring_mvc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
 
 // Создаем класс SpringMVCController и аннотируем его двумя аннотациями:
@@ -25,8 +29,14 @@ public class SpringMVCController {
     }
 
     @RequestMapping("/showInfo")
-    public String showName() {
+    public String showName(HttpServletRequest request, Model model) {
+        String contryCity = (request.getParameter("cantry") + " " + request.getParameter("city"));
+
+        model.addAttribute("newAttribute", contryCity);
+
         return "showInfo";
     }
+
+
 
 }

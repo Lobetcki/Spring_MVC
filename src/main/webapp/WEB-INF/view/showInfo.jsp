@@ -11,6 +11,11 @@
 
     <h1>Столица - ${param.city}</h1>
 
+    <br>
+    <br>
+    <br>
+
+    <h3>Вы ввели: ${newAttribute}</h3>
 
 </body>
 
